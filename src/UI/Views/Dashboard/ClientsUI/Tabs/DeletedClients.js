@@ -45,9 +45,9 @@ export const DeletedClients = ({ deletedClients }) => {
       rootClassName="deleted_clients_table_row"
       columns={columns}
       dataSource={deletedClients}
-      scroll={{ y: isTabletOrMobile ? '58vh' : '50vh' }}
+      scroll={{ y: isTabletOrMobile ? '60vh' : '50vh' }}
       pagination={{
-        position: ['topRight'],
+        position: [isTabletOrMobile ? 'topRight' : 'bottomRight'],
       }}
     />
   );

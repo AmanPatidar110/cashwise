@@ -16,6 +16,8 @@ export const ActiveClients = ({
   handleSingleDeleteClient,
 }) => {
   const isTabletOrMobile = window.innerWidth <= 768;
+  const isSmallMobileHeight = window.innerHeight < 812;
+
   const columns = [
     {
       key: 'clientName',
@@ -123,10 +125,12 @@ export const ActiveClients = ({
           columns={columns}
           dataSource={activeClients}
           rootClassName="active_clients_table_row"
-          scroll={{ y: isTabletOrMobile ? '58vh' : '50vh' }}
+          scroll={{
+            y: isTabletOrMobile && isSmallMobileHeight ? '52vh' : '50vh',
+          }}
           style={{ width: '100%' }}
           pagination={{
-            position: ['topRight'],
+            position: [isTabletOrMobile ? 'topRight' : 'bottomRight'],
           }}
         />
       </div>
