@@ -38,11 +38,17 @@ const columns = [
 ];
 
 export const DeletedClients = ({ deletedClients }) => {
+  const isTabletOrMobile = window.innerWidth <= 768;
+
   return (
     <Table
       rootClassName="deleted_clients_table_row"
       columns={columns}
       dataSource={deletedClients}
+      scroll={{ y: isTabletOrMobile ? '58vh' : '50vh' }}
+      pagination={{
+        position: ['topRight'],
+      }}
     />
   );
 };

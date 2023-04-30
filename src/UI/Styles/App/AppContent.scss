@@ -3,6 +3,12 @@
   &_card {
     margin: 1rem;
     height: 79vh;
-    overflow: auto;
+  }
+}
+@media all and (max-width: 900px) {
+  .app_content {
+    &_card .ant-card-body {
+      padding: 0.1rem;
+    }
   }
 }

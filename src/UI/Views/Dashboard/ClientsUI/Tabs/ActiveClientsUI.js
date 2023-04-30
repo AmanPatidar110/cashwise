@@ -5,6 +5,7 @@ import * as React from 'react';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import { grey } from '@mui/material/colors';
 
 export const ActiveClients = ({
   activeClients,
@@ -14,6 +15,7 @@ export const ActiveClients = ({
   handleEditClient,
   handleSingleDeleteClient,
 }) => {
+  const isTabletOrMobile = window.innerWidth <= 768;
   const columns = [
     {
       key: 'clientName',
@@ -102,18 +104,30 @@ export const ActiveClients = ({
         <span
           style={{
             marginLeft: 8,
+            color: 'gray',
+            fontSize: 12,
           }}
         >
           {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
         </span>
       </div>
-      <div style={{ height: 400 }}>
+      <div
+        style={{
+          width: '100%',
+          height: '70vh',
+        }}
+      >
         <Table
+          size="small"
           rowSelection={rowSelection}
           columns={columns}
           dataSource={activeClients}
           rootClassName="active_clients_table_row"
-          scroll={{ y: 350 }}
+          scroll={{ y: isTabletOrMobile ? '58vh' : '50vh' }}
+          style={{ width: '100%' }}
+          pagination={{
+            position: ['topRight'],
+          }}
         />
       </div>
     </div>

@@ -1,6 +1,8 @@
 .clients_tabs {
+  height: 100%;
   .active_clients {
     margin-bottom: 1rem;
+    height: 100%;
 
     &_delete_button {
       color: gray;

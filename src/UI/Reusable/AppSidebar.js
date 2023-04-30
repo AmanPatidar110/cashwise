@@ -31,8 +31,23 @@ const items = [
 ];
 
 export const AppSidebar = () => {
+  const [collapsed, setCollapsed] = React.useState(false);
+
+  const onCollapse = (collapsed) => {
+    setCollapsed(collapsed);
+  };
+
+  const onBreakpoint = (broken) => {
+    setCollapsed(broken);
+  };
   return (
     <Sider
+      collapsible
+      collapsed={collapsed}
+      onCollapse={onCollapse}
+      breakpoint="md"
+      onBreakpoint={onBreakpoint}
+      collapsedWidth={0}
       style={{ backgroundColor: '#00204e' }}
       width={300}
       className="sidebar"
