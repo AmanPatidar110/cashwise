@@ -1,0 +1,9 @@
+.clients_footer {
+  display: flex;
+  justify-content: end;
+
+  &_action {
+    margin-right: 1rem;
+    color: var(--primary-color);
+  }
+}

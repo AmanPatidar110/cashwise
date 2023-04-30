@@ -1,0 +1,12 @@
+.app_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem;
+
+  &_avatar {
+    vertical-align: middle;
+    background-color: var(--primary-color);
+  }
+}

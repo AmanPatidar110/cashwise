@@ -1,0 +1,37 @@
+.clients_tabs {
+  .active_clients {
+    margin-bottom: 1rem;
+
+    &_delete_button {
+      color: gray;
+    }
+
+    &_table_row td {
+      color: gray;
+    }
+    .list_action {
+      &_text {
+        font-size: 0.7rem;
+        color: grey;
+        cursor: pointer;
+      }
+      &_icon {
+        font-size: 1rem;
+        color: grey;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    & .list_action:hover .list_action_icon,
+    & .list_action:hover .list_action_text {
+      color: var(--primary-color);
+    }
+  }
+
+  .deleted_clients_table_row {
+    td {
+      color: gray;
+    }
+  }
+}

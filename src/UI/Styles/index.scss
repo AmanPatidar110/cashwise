@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+@import './App/AppHeader.scss';
+@import './App/AppSidebar.scss';
+@import './App/AppContent.scss';
+@import './App/AppFooter.scss';
+
+@import './Dashboard/Dashboard.scss';
+@import './Dashboard/Clients/ClientsFooter.scss';
+@import './Dashboard/Clients/ClientsList.scss';
+
+@import './Modals/ClientModal.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
