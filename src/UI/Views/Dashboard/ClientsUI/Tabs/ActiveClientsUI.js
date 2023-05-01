@@ -2,9 +2,10 @@
 import { Button, Space, Table } from 'antd';
 import * as React from 'react';
 
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import editIcon from '../../../../../static/icons/edit.svg';
+import deleteIcon from '../../../../../static/icons/delete.svg';
+import invoiceIcon from '../../../../../static/icons/receipt.svg';
+
 import { grey } from '@mui/material/colors';
 
 export const ActiveClients = ({
@@ -42,7 +43,7 @@ export const ActiveClients = ({
       title: 'GSTIN/Tax ID',
       dataIndex: 'taxId',
       render: (text) => text || '-',
-      width: 150,
+      width: 120,
     },
     {
       key: 'panNumber',
@@ -63,16 +64,16 @@ export const ActiveClients = ({
       dataIndex: 'action',
       width: 200,
       render: (text, record) => (
-        <Space size="middle">
+        <Space size={25}>
           <div className="list_action" onClick={() => handleEditClient(record)}>
             <div className="list_action_icon">
-              <EditNoteIcon />
+              <img width={'100%'} height={'100%'} src={editIcon}></img>
             </div>
             <div className="list_action_text">Edit</div>
           </div>
           <div className="list_action">
             <div className="list_action_icon">
-              <ReceiptLongIcon />
+              <img width={'100%'} height={'100%'} src={invoiceIcon}></img>
             </div>
             <div className="list_action_text">Create Invoice</div>
           </div>
@@ -80,8 +81,8 @@ export const ActiveClients = ({
             className="list_action"
             onClick={() => handleSingleDeleteClient(record.key)}
           >
-            <div className="list_action_icon">
-              <DeleteOutlineOutlinedIcon />
+            <div className="list_action_icon list_action_delete">
+              <img width={'100%'} height={'100%'} src={deleteIcon}></img>
             </div>
             <div className="list_action_text">Delete</div>
           </div>
@@ -116,7 +117,8 @@ export const ActiveClients = ({
       <div
         style={{
           width: '100%',
-          height: '70vh',
+          height: isSmallMobileHeight ? '90%' : '95%',
+          marginTop: 10,
         }}
       >
         <Table
@@ -125,13 +127,9 @@ export const ActiveClients = ({
           columns={columns}
           dataSource={activeClients}
           rootClassName="active_clients_table_row"
-          scroll={{
-            y: isTabletOrMobile && isSmallMobileHeight ? '52vh' : '50vh',
-          }}
-          style={{ width: '100%' }}
-          pagination={{
-            position: [isTabletOrMobile ? 'topRight' : 'bottomRight'],
-          }}
+          scroll={{ y: isSmallMobileHeight ? '90%' : '97%' }}
+          style={{ width: '100%', height: '95%' }}
+          pagination={false}
         />
       </div>
     </div>

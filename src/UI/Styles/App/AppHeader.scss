@@ -1,9 +1,13 @@
 .app_header {
   display: flex;
+  font-size: 20px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 2rem;
+  background-color: whitesmoke;
+  height: 6rem;
+
+  padding: 2rem 1rem;
+  padding-top: 3rem;
 
   &_avatar {
     vertical-align: middle;

@@ -1,8 +1,26 @@
 .clients_tabs {
   height: 100%;
+
+  &_button {
+    color: grey;
+    padding: 0;
+  }
+  &_active_tab {
+    color: var(--primary-color);
+  }
+
+  &_container {
+    padding-top: 2rem;
+    height: 100%;
+  }
+
   .active_clients {
     margin-bottom: 1rem;
     height: 100%;
+
+    // .ant-table-scroll {
+    //   overflow-y: scroll; /* Make the table scrollable */
+    // }
 
     &_delete_button {
       color: gray;
@@ -12,6 +30,11 @@
       color: gray;
     }
     .list_action {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       &_text {
         font-size: 0.7rem;
         color: grey;
@@ -19,14 +42,22 @@
       }
       &_icon {
         font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
         color: grey;
         cursor: pointer;
         display: flex;
         justify-content: center;
+        align-items: center;
+      }
+      &_delete {
+        width: 1rem;
+        height: 0.9rem;
       }
     }
-    & .list_action:hover .list_action_icon,
+    & .list_action:hover .list_action_icon img,
     & .list_action:hover .list_action_text {
+      fill: var(--primary-color);
       color: var(--primary-color);
     }
   }
@@ -35,5 +66,22 @@
     td {
       color: gray;
     }
+  }
+
+  .ant-table-wrapper {
+    height: 100%; /* Set the height of the table wrapper to 100% of its parent element */
+  }
+
+  .ant-table-thead .ant-table-cell {
+    font-weight: 400;
+    background-color: #f5f5f5;
+  }
+
+  .ant-table-container,
+  .ant-table,
+  .ant-spin-container,
+  .ant-spin-nested-loading {
+    border-start-start-radius: 0;
+    height: 100%;
   }
 }

@@ -41,14 +41,20 @@ export const DeletedClients = ({ deletedClients }) => {
   const isTabletOrMobile = window.innerWidth <= 768;
 
   return (
-    <Table
-      rootClassName="deleted_clients_table_row"
-      columns={columns}
-      dataSource={deletedClients}
-      scroll={{ y: isTabletOrMobile ? '60vh' : '50vh' }}
-      pagination={{
-        position: [isTabletOrMobile ? 'topRight' : 'bottomRight'],
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
       }}
-    />
+    >
+      <Table
+        rootClassName="deleted_clients_table_row"
+        columns={columns}
+        dataSource={deletedClients}
+        scroll={{ y: '95%' }}
+        style={{ width: '100%', height: '95%' }}
+        pagination={false}
+      />
+    </div>
   );
 };

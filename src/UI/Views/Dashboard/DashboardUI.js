@@ -11,7 +11,7 @@ export const DashboardUI = () => {
     <Layout>
       <AppSidebar />
       <Layout>
-        <AppHeader headerTitle={'Clients List'} />
+        <AppHeader headerTitle={'Invoice Summary'} />
         <ClientsList />
       </Layout>
     </Layout>

@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <ConfigProvider
         theme={{
+          '@font-size-base': '16px',
           token: {
             // colorPrimary: '#1161D6',
             // colorBgBase: '#032d69',

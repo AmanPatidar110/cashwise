@@ -13,6 +13,7 @@ export const ClientsList = () => {
   const [activeClients, setActiveClients] = React.useState([]);
   const [deletedClients, setDeletedClients] = React.useState([]);
 
+  const [activeTab, setActiveTab] = React.useState('1');
   const [selectedRowKeys, setSelectedRowKeys] = React.useState([]);
   const [showAddClient, setShowAddClient] = React.useState({
     key: false,
@@ -108,6 +109,8 @@ export const ClientsList = () => {
           handleSelectionDelete={handleSelectionDelete}
           handleSingleDeleteClient={handleSingleDeleteClient}
           handleEditClient={handleEditClient}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
         />
       </AppContent>
       <AppFooter>
